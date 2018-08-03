@@ -21,3 +21,9 @@ java -jar ~/bin/closure-compiler-v20180716.jar \
     --js=hello_world.bc.js \
     --js_output_file=hello_world.opt.bc.js
 Failed
+
+## Simple counter
+
+Minimal interaction, click a button to increment counter.
+
+Build: `dune build src/{simple_counter.bc.js,simple_counter.html}`
