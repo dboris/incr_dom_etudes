@@ -59,8 +59,14 @@ module App = struct
         Vdom.Node.t Incr.t *)
     let view model ~inject =
         let open Vdom in
-        let open Incr.Let_syntax in
         let on_click _event = inject Action.Increment in
+
+        (*
+            let%map P = M in E
+            expands to
+            map M ~f:(fun P -> E)
+        *)
+        let open Incr.Let_syntax in
         let%map count = model in
         Node.body [] [
             Node.button
