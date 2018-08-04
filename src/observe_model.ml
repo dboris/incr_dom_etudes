@@ -65,25 +65,27 @@ module App = struct
 
         (* Two ways to observe model changes: *)
 
-        Incr.Observer.on_update_exn (Incr.observe model) ~f:(function
-            | Incr.Observer.Update.Changed (_old_val,new_val) ->
+        Incr.Observer.(on_update_exn (Incr.observe model) ~f:(
+            function
+            | Update.Changed (_old_val,new_val) ->
                 new_val
                 |> string_of_int
                 |> (^) "count1: "
                 |> Console.log
-            | Incr.Observer.Update.Invalidated ->
+            | Update.Invalidated ->
                 Console.log "Invalidated"
-            | _ -> ()) ;
+            | _ -> ())) ;
 
-        Incr.on_update model ~f:(function
-            | Incr.Update.Changed (_old_val,new_val) ->
+        Incr.(on_update model ~f:(
+            function
+            | Update.Changed (_old_val,new_val) ->
                 new_val
                 |> string_of_int
                 |> (^) "count2: "
                 |> Console.log
-            | Incr.Update.Invalidated ->
+            | Update.Invalidated ->
                 Console.log "Invalidated"
-            | _ -> ()) ;
+            | _ -> ())) ;
 
         let open Vdom in
         let on_click _event = inject Action.Increment in
