@@ -2,6 +2,7 @@
     (names
         hello_world
         simple_counter
-        test_on_startup)
-    (libraries incr_dom)
+        test_on_startup
+        observe_model)
+    (libraries lib incr_dom)
     (preprocess (pps js_of_ocaml-ppx ppx_jane ppxlib.runner)))

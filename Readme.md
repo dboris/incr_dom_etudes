@@ -32,4 +32,14 @@ Build: `dune build src/{simple_counter.bc.js,simple_counter.html}`
 
 Trigger action on startup.
 
-Build: `dune build src/test_on_startup.{bc.js,html}`
+Build:
+dune build src/test_on_startup.{bc.js,html}
+
+## Page router
+
+Route among pages.
+
+## Observe model -- effectful computation
+
+Subscribe handler to observe model changes.
+
