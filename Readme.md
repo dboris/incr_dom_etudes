@@ -27,3 +27,9 @@ Failed
 Minimal interaction, click a button to increment counter.
 
 Build: `dune build src/{simple_counter.bc.js,simple_counter.html}`
+
+## Test on_startup
+
+Trigger action on startup.
+
+Build: `dune build src/test_on_startup.{bc.js,html}`

@@ -1,4 +1,7 @@
 (executables
-    (names hello_world simple_counter)
+    (names
+        hello_world
+        simple_counter
+        test_on_startup)
     (libraries incr_dom)
     (preprocess (pps js_of_ocaml-ppx ppx_jane ppxlib.runner)))
